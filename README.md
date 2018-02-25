@@ -1,2 +1,2 @@
 # AlternativMediaSverige
-Samlad statistik om alternativ media i Sverige
+Samlad statistik om alternativ/nationell media i Sverige
