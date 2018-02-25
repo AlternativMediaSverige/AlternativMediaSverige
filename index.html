@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Timeline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Malar" rel="stylesheet">
+</head>
+<body>
+<h1>Alternativmedier<br>
+    <span id="time"></span><br>
+    <!--<input type="range" min="946684800" max="9466848001" value="946684800" id="myRange">-->
+</h1>
+<div id="bubbleWrap">
+</div>
+
+<script>
+    //var hej = parseInt(document.getElementById("myRange").value);
+    //document.getElementById("myRange").max = Math.round(timestamp/1000);
+    var d = new Date('2008-01-01');
+    var drawInterval = setInterval(myTimer, 20);
+    var timestamp = +new Date();
+    drawDate();
+
+    function myTimer() {
+        drawBubble();
+        drawDate();
+        d.setDate(d.getDate() + 1);
+
+        if (d - 1 >= date) {
+            clearInterval(drawInterval);
+        }
+    }
+
+    function drawBubble() {
+        for (var i in data) {
+            var bubbleElement = document.getElementById('bubble' + i);
+            if (normalizeDate(d) >= data[i].start && !bubbleElement && normalizeDate(d) <= data[i].end) {
+                var size = data[i].content.length * 10 + 'px';
+                var newElement = document.createElement('div');
+
+                newElement.id = 'bubble' + i;
+                newElement.className = "bubble";
+                newElement.innerHTML = data[i].content;
+                newElement.style.left = Math.floor(Math.random() * 80) + 0 + '%';
+                newElement.style.top = Math.floor(Math.random() * 80) + 10 + '%';
+                newElement.style.width = size;
+                newElement.style.height = size;
+                newElement.style.lineHeight = size;
+                newElement.style.backgroundColor = getRandomColor();
+
+                document.getElementById("bubbleWrap").appendChild(newElement);
+                dragElement(newElement);
+            }
+
+            if (normalizeDate(d) > data[i].end && bubbleElement) {
+                var element = bubbleElement;
+                element.outerHTML = "";
+                delete element;
+            }
+        }
+    }
+
+    function drawDate() {
+        document.getElementById("time").innerHTML = d.toLocaleDateString("sv-SE", {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function normalizeDate(date) {
+
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+
+        if (month.toString().length == 1) {
+            month = '0' + month;
+        }
+        if (day.toString().length == 1) {
+            day = '0' + day;
+        }
+
+        return date.getFullYear() + '-' + month + '-' + day;
+
+    }
+
+
+    //https://www.w3schools.com/howto/howto_js_draggable.asp
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        elmnt.onmousedown = dragMouseDown;
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+        function elementDrag(e) {
+            e = e || window.event;
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+        function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
+<script src="data.js"></script>
+</body>
+</html>

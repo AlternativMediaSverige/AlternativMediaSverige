@@ -1,0 +1,37 @@
+body, html {
+    font-family: 'Mukta Malar', sans-serif;
+    background: #eee;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    z-index: 500;
+    position: relative;
+    text-shadow: 2px 2px 2px #848484;
+    opacity: 0.5;
+}
+
+.bubble {
+    position: absolute;
+    background-color: red;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    color: white;
+    overflow: hidden;
+    text-shadow: 0px 0px 4px black;
+    cursor: all-scroll;
+    box-shadow: 0px 0px 4px #8c8c8c;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,111 @@
+var date = new Date();
+var stillGoingStrong = normalizeDate(date);
+
+
+var data = [
+    {
+        content: 'Ingrid & Conrad',
+        type: 'Podcast',
+        start: '2015-06-06',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'Fria Tider',
+        type: 'News',
+        start: '2009-01-01',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Avpixlat',
+        type: 'News',
+        start: '2011-01-01',
+        end: '2017-08-30',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'exponerat.net',
+        type: 'News',
+        start: '2009-01-01',
+        end: '2016-08-01',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Herr Nationell',
+        type: 'Podcast',
+        start: '2012-01-01',
+        end: '2012-06-10',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Radio Länsman',
+        type: 'Podcast',
+        start: '2012-06-10',
+        end: '2015-09-10',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Radio Realism',
+        type: 'Podcast',
+        start: '2015-09-10',
+        end: '2017-09-08',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Verklighetschecken',
+        type: 'Podcast',
+        start: '2017-09-10',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'Motgift',
+        type: 'Podcast, News, TV',
+        start: '2015-06-01',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: ' MUF ',
+        type: 'Podcast',
+        start: '2015-06-01',
+        end: '2016-06-06',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Vita Pillret',
+        type: 'Podcast',
+        start: '2017-08-22',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'RN DIREKT',
+        type: 'Podcast',
+        start: '2016-10-06',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'Radio Regeringen',
+        type: 'Podcast',
+        start: '2016-08-29',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Den Kokta Grodan',
+        type: 'Podcast',
+        start: '2016-01-14',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Studio Nordfront',
+        type: 'TV',
+        start: '2017-11-16',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
+];
