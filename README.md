@@ -17,5 +17,5 @@ Så klart får ni också förbättra och lägga till saker i koden
 
 
 ## TODO
-* Sett att scrolla igenom datum
+* Sätt att scrolla igenom datum
 * Se till att jag och andra kalenderbitare redigerar in fler poddar, nyhetssidor och annat i data.js :)
