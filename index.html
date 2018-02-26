@@ -9,9 +9,10 @@
 </head>
 <body>
 <h1>Alternativmedier<br>
-    <span id="time"></span><br>
-    <!--<input type="range" min="946684800" max="9466848001" value="946684800" id="myRange">-->
+    <span id="time"></span>
 </h1>
+<!--<input type="range" min="946684800" max="9466848001" value="946684800" id="myRange">-->
+
 <div id="bubbleWrap">
 </div>
 
@@ -19,7 +20,7 @@
     //var hej = parseInt(document.getElementById("myRange").value);
     //document.getElementById("myRange").max = Math.round(timestamp/1000);
     var d = new Date('2008-01-01');
-    var drawInterval = setInterval(myTimer, 20);
+    var drawInterval = setInterval(myTimer, 50);
     var timestamp = +new Date();
     drawDate();
 
@@ -43,10 +44,11 @@
                 newElement.id = 'bubble' + i;
                 newElement.className = "bubble";
                 newElement.innerHTML = data[i].content;
-                newElement.style.left = Math.floor(Math.random() * 80) + 0 + '%';
+                newElement.style.left = Math.floor(Math.random() * 85) + 0 + '%';
                 newElement.style.top = Math.floor(Math.random() * 80) + 10 + '%';
                 newElement.style.width = size;
                 newElement.style.height = size;
+                newElement.style.opacity = "0.8";
                 newElement.style.lineHeight = size;
                 newElement.style.backgroundColor = getRandomColor();
 
@@ -56,8 +58,8 @@
 
             if (normalizeDate(d) > data[i].end && bubbleElement) {
                 var element = bubbleElement;
-                element.outerHTML = "";
-                delete element;
+                element.style.opacity = "0";
+                setTimeout(function(){ element.style.display = "none"; }, 2000);
             }
         }
     }
