@@ -171,4 +171,11 @@ var data = [
         end: '2016-11-24',
         dateAccuracy: 'Estimated',
     },
+    {
+        content: 'Tidningen Svegot',
+        type: 'Podcast & News',
+        start: '2017-01-01',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
 ];
