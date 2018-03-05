@@ -9,57 +9,69 @@
 </head>
 <body>
 <h1>Alternativmedier<br>
-    <span id="time"></span>
+    <span id="time"></span><br>
+    <input type="date" id="myDate" value="2018-01-01">
 </h1>
-<!--<input type="range" min="946684800" max="9466848001" value="946684800" id="myRange">-->
+
 
 <div id="bubbleWrap">
 </div>
 <div id="description">Ser du något som saknas? <a href="https://github.com/AlternativMediaSverige/AlternativMediaSverige">Hjälp till!</a></div>
 <script>
-    //var hej = parseInt(document.getElementById("myRange").value);
-    //document.getElementById("myRange").max = Math.round(timestamp/1000);
     var d = new Date('2008-01-01');
-    var drawInterval = setInterval(myTimer, 50);
+    var drawInterval = setInterval(myTimer, 20);
     var timestamp = +new Date();
+
+    var date = new Date();
+    var stillGoingStrong = normalizeDate(date);
+
+    document.getElementById("myDate").value = normalizeDate(date);
+
     drawDate();
 
     function myTimer() {
         drawBubble();
         drawDate();
-        d.setDate(d.getDate() + 1);
-
-        if (d - 1 >= date) {
-            clearInterval(drawInterval);
+        if (normalizeDate(d) < document.getElementById("myDate").value) {
+            d.setDate(d.getDate() + 1);
         }
+        if (normalizeDate(d) > document.getElementById("myDate").value) {
+            d.setDate(d.getDate() - 1);
+        }
+
     }
 
     function drawBubble() {
         for (var i in data) {
             var bubbleElement = document.getElementById('bubble' + i);
-            if (normalizeDate(d) >= data[i].start && !bubbleElement && normalizeDate(d) <= data[i].end) {
+            if (normalizeDate(d) >= data[i].start && normalizeDate(d) <= data[i].end) {
                 var size = data[i].content.length * 10 + 'px';
-                var newElement = document.createElement('div');
+                if (!bubbleElement) {
+                    var newElement = document.createElement('div');
+                    newElement.id = 'bubble' + i;
+                    newElement.className = "bubble";
+                    newElement.innerHTML = data[i].content;
+                    newElement.style.left = Math.floor(Math.random() * 85) + 0 + '%';
+                    newElement.style.top = Math.floor(Math.random() * 80) + 10 + '%';
+                    newElement.style.width = size;
+                    newElement.style.height = size;
+                    newElement.style.opacity = "0.8";
+                    newElement.style.lineHeight = size;
+                    newElement.style.backgroundColor = getRandomColor();
+                    document.getElementById("bubbleWrap").appendChild(newElement);
+                    dragElement(newElement);
+                } else {
+                    bubbleElement.style.opacity = "0.8";
+                    bubbleElement.style.display = "block";
+                }
 
-                newElement.id = 'bubble' + i;
-                newElement.className = "bubble";
-                newElement.innerHTML = data[i].content;
-                newElement.style.left = Math.floor(Math.random() * 85) + 0 + '%';
-                newElement.style.top = Math.floor(Math.random() * 80) + 10 + '%';
-                newElement.style.width = size;
-                newElement.style.height = size;
-                newElement.style.opacity = "0.8";
-                newElement.style.lineHeight = size;
-                newElement.style.backgroundColor = getRandomColor();
-
-                document.getElementById("bubbleWrap").appendChild(newElement);
-                dragElement(newElement);
             }
 
-            if (normalizeDate(d) > data[i].end && bubbleElement) {
-                var element = bubbleElement;
-                element.style.opacity = "0";
-                setTimeout(function(){ element.style.display = "none"; }, 3000);
+            if (normalizeDate(d) < data[i].start && bubbleElement || normalizeDate(d) > data[i].end && bubbleElement) {
+                bubbleElement.style.opacity = "0";
+                setTimeout(function() {
+                    bubbleElement.style.display = "none";
+                }, 3000);
             }
         }
     }
@@ -112,6 +124,7 @@
             // call a function whenever the cursor moves:
             document.onmousemove = elementDrag;
         }
+
         function elementDrag(e) {
             e = e || window.event;
             // calculate the new cursor position:
@@ -123,6 +136,7 @@
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
+
         function closeDragElement() {
             /* stop moving when mouse button is released:*/
             document.onmouseup = null;

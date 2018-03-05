@@ -1,7 +1,3 @@
-var date = new Date();
-var stillGoingStrong = normalizeDate(date);
-
-
 var data = [
     {
         content: 'Ingrid & Conrad',
@@ -177,5 +173,26 @@ var data = [
         start: '2017-01-01',
         end: stillGoingStrong,
         dateAccuracy: 'Verified',
+    },
+    {
+        content: ' info14 ',
+        type: 'News',
+        start: '1995-04-01',
+        end: '2011-03-01',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Den Svenske',
+        type: 'News',
+        start: '1933-01-25',
+        end: '1950-01-01',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Den Sanne Nationalsocialisten',
+        type: 'News',
+        start: '2001-01-01',
+        end: '2008-01-01',
+        dateAccuracy: 'Estimated',
     },
 ];
