@@ -216,7 +216,20 @@ var data = [
         end: '2017-04-26',
         dateAccuracy: 'Verified',
     },
-
+    {
+        content: 'Me ne frego',
+        type: 'Podcast',
+        start: '2017-10-16',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'Motpol',
+        type: 'Podcast',
+        start: '2015-03-23',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
 
 
 
