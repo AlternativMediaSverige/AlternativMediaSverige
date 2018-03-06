@@ -9,12 +9,9 @@ https://rawgit.com/AlternativMediaSverige/AlternativMediaSverige/master/index.ht
 
 ## Info
 
-Hjälp gärna till att redigera in dom poddar ni känner till här:
+Hjälp gärna till att redigera in dom poddar, nyhetssidor eller andra projekt ni känner till här:
 https://github.com/AlternativMediaSverige/AlternativMediaSverige/blob/master/data.js
 
 Så klart får ni också förbättra och lägga till saker i koden
 
 
-
-## TODO
-* Se till att jag och andra kalenderbitare redigerar in fler poddar, nyhetssidor och annat i data.js :)
