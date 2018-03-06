@@ -216,4 +216,18 @@ var data = [
         end: '2017-04-26',
         dateAccuracy: 'Verified',
     },
+
+
+
+
+
+    
+
+    {
+        content: 'DEBUG add data over this element',
+        type: 'DEBUG',
+        start: '0000-00-00',
+        end: '0000-00-00',
+        dateAccuracy: 'DEBUG',
+    },
 ];
