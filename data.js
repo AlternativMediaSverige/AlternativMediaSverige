@@ -224,15 +224,15 @@ var data = [
         dateAccuracy: 'Verified',
     },
     {
-        content: 'Motpol',
-        type: 'Podcast',
+        content: ' Motpol',
+        type: 'News',
         start: '2015-03-23',
         end: stillGoingStrong,
         dateAccuracy: 'Verified',
     },
     {
         content: 'Nya Tider',
-        type: 'Podcast',
+        type: 'News',
         start: '2012-11-01',
         end: stillGoingStrong,
         dateAccuracy: 'Estimated',
