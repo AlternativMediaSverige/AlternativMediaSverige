@@ -195,4 +195,25 @@ var data = [
         end: '2008-01-01',
         dateAccuracy: 'Estimated',
     },
+    {
+        content: 'Nordfront',
+        type: 'News',
+        start: '2009-01-01',
+        end: stillgoingstrong,
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Nationellt Motstånd',
+        type: 'News',
+        start: '2003-01-01',
+        end: '2010-02-28',
+        dateAccuracy: 'Estimated',
+    },
+    {
+        content: 'Nordisk.nu',
+        type: 'Portal',
+        start: '2007-04-18',
+        end: '2017-04-26',
+        dateAccuracy: 'Verified',
+    },
 ];
