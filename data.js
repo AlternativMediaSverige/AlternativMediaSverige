@@ -230,7 +230,13 @@ var data = [
         end: stillGoingStrong,
         dateAccuracy: 'Verified',
     },
-
+    {
+        content: 'Nya Tider',
+        type: 'Podcast',
+        start: '2012-11-01',
+        end: stillGoingStrong,
+        dateAccuracy: 'Estimated',
+    },
 
 
 
