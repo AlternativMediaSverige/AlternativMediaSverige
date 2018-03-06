@@ -199,7 +199,7 @@ var data = [
         content: 'Nordfront',
         type: 'News',
         start: '2009-01-01',
-        end: stillgoingstrong,
+        end: stillGoingStrong,
         dateAccuracy: 'Estimated',
     },
     {
