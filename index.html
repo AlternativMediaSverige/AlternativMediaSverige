@@ -17,31 +17,9 @@
 <div id="bubbleWrap">
 </div>
 <div id="description">Ser du något som saknas? <a href="https://github.com/AlternativMediaSverige/AlternativMediaSverige">Hjälp till!</a></div>
+<script src="script.js"></script>
+<script src="data.js"></script>
 <script>
-    var d = new Date('2008-01-01');
-    var drawInterval = setInterval(myTimer, 20);
-    var timestamp = +new Date();
-
-    var date = new Date();
-    var stillGoingStrong = normalizeDate(date);
-
-    document.getElementById("myDate").value = normalizeDate(date);
-
-    drawDate();
-
-    function myTimer() {
-        drawBubble();
-        drawDate();
-        if (normalizeDate(d) < document.getElementById("myDate").value) {
-            d.setDate(d.getDate() + 1);
-        }
-        if (normalizeDate(d) > document.getElementById("myDate").value) {
-            d.setDate(d.getDate() - 1);
-        }
-
-    }
-
-    function drawBubble() {
         for (var i in data) {
             var bubbleElement = document.getElementById('bubble' + i);
             if (normalizeDate(d) >= data[i].start && normalizeDate(d) <= data[i].end) {
@@ -59,91 +37,12 @@
                     newElement.style.lineHeight = size;
                     newElement.style.backgroundColor = getRandomColor();
                     document.getElementById("bubbleWrap").appendChild(newElement);
+                    newElement.style.transform = "scale(1)";
                     dragElement(newElement);
-                } else {
-                    bubbleElement.style.opacity = "0.8";
-                    bubbleElement.style.display = "block";
+
                 }
-
-            }
-
-            if (normalizeDate(d) < data[i].start && bubbleElement || normalizeDate(d) > data[i].end && bubbleElement) {
-                bubbleElement.style.opacity = "0";
-                setTimeout(function() {
-                    bubbleElement.style.display = "none";
-                }, 3000);
             }
         }
-    }
-
-    function drawDate() {
-        document.getElementById("time").innerHTML = d.toLocaleDateString("sv-SE", {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    }
-
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-
-    function normalizeDate(date) {
-
-        var month = date.getMonth() + 1;
-        var day = date.getDate();
-
-        if (month.toString().length == 1) {
-            month = '0' + month;
-        }
-        if (day.toString().length == 1) {
-            day = '0' + day;
-        }
-
-        return date.getFullYear() + '-' + month + '-' + day;
-
-    }
-
-
-    //https://www.w3schools.com/howto/howto_js_draggable.asp
-    function dragElement(elmnt) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        elmnt.onmousedown = dragMouseDown;
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            // get the mouse cursor position at startup:
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            // call a function whenever the cursor moves:
-            document.onmousemove = elementDrag;
-        }
-
-        function elementDrag(e) {
-            e = e || window.event;
-            // calculate the new cursor position:
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            // set the element's new position:
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-
-        function closeDragElement() {
-            /* stop moving when mouse button is released:*/
-            document.onmouseup = null;
-            document.onmousemove = null;
-        }
-    }
 </script>
-<script src="data.js"></script>
 </body>
 </html>
