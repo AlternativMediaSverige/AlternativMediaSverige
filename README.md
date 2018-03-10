@@ -3,9 +3,7 @@ Samlad statistik om alternativ/nationell media i Sverige.
 
 Se animationen här (fungerar bäst på dator):
 
-https://htmlpreview.github.io/?https://github.com/AlternativMediaSverige/AlternativMediaSverige/blob/master/index.html 
-
-https://rawgit.com/AlternativMediaSverige/AlternativMediaSverige/master/index.html
+https://cdn.rawgit.com/AlternativMediaSverige/AlternativMediaSverige/ff2af7de/index.html
 
 ## Info
 
