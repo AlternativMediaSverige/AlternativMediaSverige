@@ -170,7 +170,7 @@ var data = [
     {
         content: 'Tidningen Svegot',
         type: 'Podcast & News',
-        start: '2017-01-01',
+        start: '2018-02-22',
         end: stillGoingStrong,
         dateAccuracy: 'Verified',
     },
@@ -236,17 +236,5 @@ var data = [
         start: '2012-11-01',
         end: stillGoingStrong,
         dateAccuracy: 'Estimated',
-    },
-
-
-
-    
-
-    {
-        content: 'DEBUG add data over this element',
-        type: 'DEBUG',
-        start: '0000-00-00',
-        end: '0000-00-00',
-        dateAccuracy: 'DEBUG',
     },
 ];
