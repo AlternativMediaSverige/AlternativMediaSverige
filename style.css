@@ -2,6 +2,8 @@ body, html {
     font-family: 'Mukta Malar', sans-serif;
     background: #eee;
     margin: 0px;
+    height:100%;
+    width:100%;
 }
 
 h1 {
@@ -9,7 +11,7 @@ h1 {
     text-align: center;
     padding: 0px;
     margin: 0px;
-    z-index: 500;
+    z-index: 1;
     position: relative;
     text-shadow: 2px 2px 2px #848484;
     opacity: 0.5;
@@ -20,7 +22,7 @@ h1 {
     text-align: center;
     padding: 0px;
     margin: 0px;
-    z-index: 500;
+    z-index: 1;
     position: relative;
     text-shadow: 2px 2px 2px #848484;
     opacity: 0.7;
@@ -30,6 +32,13 @@ h1 {
 }
 #time{
     font-size:22px;
+}
+
+#bubbleWrap{
+    width: 100%;
+    position: relative;
+    height: 83vh;
+    z-index: 20;
 }
 
 .bubble {
@@ -46,8 +55,12 @@ h1 {
     cursor: all-scroll;
     box-shadow: 0px 0px 4px #8c8c8c;
     opacity:0.8;
-    -webkit-transition: opacity 3s; /* Safari */
-    transition: opacity 3s;
+    -webkit-transition: opacity 3s, transform 1s; /* Safari */
+    transition: opacity 3s, transform 1s;
+
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari */
+    transform: scale(0);
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
