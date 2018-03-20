@@ -237,5 +237,12 @@ var data = [
         end: stillGoingStrong,
         dateAccuracy: 'Estimated',
     },
+    {
+        content: 'Palaestra Media',
+        type: 'TV',
+        start: '2017-10-12',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
 ];
 
