@@ -136,7 +136,7 @@ var data = [
         content: 'Godmorgon Med Magnus',
         type: 'Podcast',
         start: '2016-08-22',
-        end: stillGoingStrong,
+        end: '2018-03-16',
         dateAccuracy: 'Verified',
     },
     {
@@ -241,6 +241,13 @@ var data = [
         content: 'Palaestra Media',
         type: 'TV',
         start: '2017-10-12',
+        end: stillGoingStrong,
+        dateAccuracy: 'Verified',
+    },
+    {
+        content: 'Kväll med Svegot',
+        type: 'Radio/Podcast',
+        start: '2018-04-03',
         end: stillGoingStrong,
         dateAccuracy: 'Verified',
     },
